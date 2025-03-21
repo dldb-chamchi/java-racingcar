@@ -14,7 +14,7 @@ public class Game {
 
     public static String inputCarName(){
         String carName = Console.readLine();
-        if(carName == null || carName.isEmpty()) throw new RuntimeException("자동차 이름을 제대로 입력해주세요.");
+        if(carName == null || carName.isEmpty()) throw new IllegalArgumentException("자동차 이름을 제대로 입력해주세요.");
         return carName;
     }
 
