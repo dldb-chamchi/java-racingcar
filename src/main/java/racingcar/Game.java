@@ -9,7 +9,6 @@ import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Game {
-
     private List<RacingCar> racingCars = new ArrayList<>();
     private int runCount = 0;
 
