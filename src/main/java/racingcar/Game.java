@@ -70,7 +70,9 @@ public class Game {
 
     private void gameStatePrint(){
         gameRun();
-        for(var car : racingCars) System.out.println(car.getCarName() + " : " + "-".repeat(car.getForwardCount()));
+        for (RacingCar car : racingCars) {
+            System.out.printf("%s : %s%n", car.getCarName(), "-".repeat(car.getForwardCount()));
+        }
         System.out.println();
     }
 
