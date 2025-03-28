@@ -9,10 +9,13 @@ import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Game {
+    static String input1 = "경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).";
+    static String input2 = "시도할 횟수는 몇회인가요?";
+
     private List<RacingCar> racingCars = new ArrayList<>();
     private int runCount = 0;
 
-    public static String inputCarName(){
+    private static String inputCarName(){
         String carName = Console.readLine();
         if(carName == null || carName.isEmpty()) throw new IllegalArgumentException("자동차 이름을 제대로 입력해주세요.");
         return carName;
@@ -60,11 +63,11 @@ public class Game {
 
     private void gameRun(){
         for(var car : racingCars){
-            carCanGo(randomPick(), car);
+            checkAndMoveCar(randomPick(), car);
         }
     }
 
-    private void carCanGo(int randomNumber, RacingCar car){
+    private void checkAndMoveCar(int randomNumber, RacingCar car){
         if(randomNumber >= 4) car.increaseForwardCount(randomNumber);
     }
 
@@ -102,9 +105,9 @@ public class Game {
     }
 
     private void gameSetting(){
-        System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).");
+        System.out.println(input1);
         setCar(splitInput(inputCarName()));
-        System.out.println("시도할 횟수는 몇회인가요?");
+        System.out.println(input2);
         setRunCount();
     }
 
