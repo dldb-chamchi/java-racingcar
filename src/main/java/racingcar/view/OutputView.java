@@ -12,7 +12,7 @@ public class OutputView {
 
     public void printRound(List<RacingCar> racingCars) {
         for (RacingCar car : racingCars) {
-            System.out.println(car.getCarName() + " : " + "-".repeat(car.getForwardCount()));
+            System.out.printf("%s : %s%n", car.getCarName(), "-".repeat(car.getForwardCount()));
         }
         System.out.println();
     }
